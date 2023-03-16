@@ -9,7 +9,7 @@ const int maxRange=200;//Determines the max range of guessing which goes from 1-
 const int howClose=3;//Determines the range to tell if guess is close to the random number
 
 //By Juan Carlos Haro Romo
-int guessMyNumberMain() {
+void guessMyNumberMain() {
 
     //insigend int uses only positive numbers optimazing space 
     srand(static_cast<unsigned int>(time(0)));
@@ -113,7 +113,6 @@ int guessMyNumberMain() {
     } while (run);
 
 
-    return 0;
 }
 
 std::string attempMessage() {
