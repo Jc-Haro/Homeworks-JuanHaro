@@ -10,6 +10,7 @@ std::string attempMessage();
 const int maxRange=200;//Determines the max range of guessing which goes from 1-maxRange
 const int howClose=3;//Determines the range to tell if guess is close to the random number
 
+int guessRangeValidation(int minRange, int maxRange);
 //By Juan Carlos Haro Romo
 void guessMyNumberMain() {
 
@@ -31,16 +32,8 @@ void guessMyNumberMain() {
             system("Color 07");
             system("cls");
             attempCounter++;
-            do {
-                std::cout << "Adivina mi numero del 1 al "<<maxRange<<"\nDigite un numero:\n" << "\n";
-                std::cin >> myguess;
-                //Checks if the guess number is between 1-maxRange
-                if (myguess > maxRange || myguess < 1) {
-                    std::cout << "El numero esta entre 1 y "<<maxRange<<"\nDigita un numero en dicho rango\n";
-                    system("pause");
-                    system("cls");
-                }
-            } while (myguess > maxRange || myguess < 1);
+
+            myguess = guessRangeValidation(1,maxRange);
 
             //Checking guees and number
             if (myguess > mynumb) {
@@ -144,4 +137,18 @@ std::string attempMessage() {
     default:return "Algo salio mal xd?\n";
         break;
     }
+}
+int guessRangeValidation(int minRange, int maxRange){
+    int preValidationGuess{};
+    do {
+                std::cout << "Adivina mi numero del 1 al "<<maxRange<<"\nDigite un numero:\n" << "\n";
+                std::cin >> preValidationGuess;
+                //Checks if the guess number is between 1-maxRange
+                if (preValidationGuess > maxRange || preValidationGuess < 1) {
+                    std::cout << "El numero esta entre 1 y "<<maxRange<<"\nDigita un numero en dicho rango\n";
+                    system("pause");
+                    system("cls");
+                }
+            } while (preValidationGuess > maxRange || preValidationGuess < 1);
+    return preValidationGuess;
 }
