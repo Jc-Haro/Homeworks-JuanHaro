@@ -2,11 +2,8 @@
 #include<string>
 #include<time.h>
 #include<stdlib.h>
-#if _WIN32
 #include<Windows.h> 
-#else
-#include<unistd.h>
-#endif
+
 std::string attempMessage();
 const int maxRange=200;//Determines the max range of guessing which goes from 1-maxRange
 const int howClose=3;//Determines the range to tell if guess is close to the random number
@@ -95,7 +92,7 @@ void guessMyNumberMain() {
                     default: std::cout << "ERROR";
                         break;
                     }
-                    sleep(500);
+                    Sleep(500);
                 }
             }
             system("Color 07");
