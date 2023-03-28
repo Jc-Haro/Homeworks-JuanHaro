@@ -139,7 +139,7 @@ std::string attempMessage() {
         break;
     }
 }
-int guessRangeValidation(int maxRange,std::string question,int minRange=1){
+int guessRangeValidation(int maxRange,std::string question,int minRange){
     int preValidationGuess{};
     do {
                 std::cout << question<<minRange<<" al "<<maxRange;

@@ -1,9 +1,11 @@
 #include<iostream>
 #include"./guessMyNumber.h"
+#include"./consoleNumbers.h"
+
 
 int main(){
 
-    int hwOption{};
+    char hwOption{};
     bool runMainHW=true;
 
     do{
@@ -11,13 +13,16 @@ int main(){
         std::cout<<"Welcome to Juan Haro Homeworks\nPlease choose an activity:\n";
         std::cout<<"1- End program\n";
         std::cout<<"2.- Guess My number\n";
+        std::cout<<"3.- Console numbers\n";
 
         std::cin>>hwOption;
 
         switch (hwOption){
-        case 1: runMainHW=false;
+        case '1': runMainHW=false;
             break;
-        case 2: guessMyNumberMain();
+        case '2': guessMyNumberMain();
+            break;
+        case '3': consoleNumbersMain();
             break;
         default: std::cout<<"That option is not available yet\n";
             break;
