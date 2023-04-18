@@ -2,7 +2,7 @@
 #include<string>
 #include<time.h>
 #include<stdlib.h>
-#include<Windows.h> 
+//#include<Windows.h> 
 
 std::string attempMessage();
 const int maxRange=200;//Determines the max range of guessing which goes from 1-maxRange
@@ -92,7 +92,7 @@ void guessMyNumberMain() {
                     default: std::cout << "ERROR";
                         break;
                     }
-                    Sleep(500);
+                    //Sleep(500);
                 }
             }
             system("Color 07");
