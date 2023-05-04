@@ -2,6 +2,7 @@
 #include"./guessMyNumber.h"
 #include"./consoleNumbers.h"
 #include"./rockPapersScissors.h"
+#include"./guessMyWord.h"
 
 int main(){
 
@@ -15,6 +16,7 @@ int main(){
         std::cout<<"2.- Guess My number\n";
         std::cout<<"3.- Console numbers\n";
         std::cout<<"4.- Rock Paper Scissors\n";
+        std::cout<<"5.- Order my word\n";
 
         std::cin>>hwOption;
 
@@ -26,6 +28,8 @@ int main(){
         case '3': consoleNumbersMain();
             break;
         case '4': rpsMain();
+            break;
+        case '5': guessMyWordMain();
             break;
         default: std::cout<<"That option is not available yet\n";
             break;
