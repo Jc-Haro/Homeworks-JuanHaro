@@ -3,6 +3,8 @@
 #include"./consoleNumbers.h"
 #include"./rockPapersScissors.h"
 #include"./guessMyWord.h"
+#include"./ hangedManGame.h"
+
 
 int main(){
 
@@ -31,6 +33,7 @@ int main(){
             break;
         case '5': guessMyWordMain();
             break;
+        case '6': hangedManGameMain();
         default: std::cout<<"That option is not available yet\n";
             break;
         }
