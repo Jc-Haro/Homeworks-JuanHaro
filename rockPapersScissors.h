@@ -20,13 +20,11 @@ void rpsMain(){
     int computerWins=0;
     int playerWins =0;
 
-   textcolor(RED);
     std::cout<<"\nWelcome to rock paper scissors lets play\nBest of 3 wins";
 
     while (playerWins<2 && computerWins<2){
         computerRPS= ((rand()%3)+1);
         std::cout<<std::endl<<computerRPS<<std::endl;
-        textcolor(WHITE);
         
         std::cout<<"\nPlayer wins: "<<playerWins<<"\nComputer wins: "<<computerWins<<std::endl;
         playerRPS= getRPS();
@@ -93,7 +91,6 @@ std::string win(int &playerWin){
    //WIP feature
    std::string winPhrases[] = {"I'll win next time", "No, I can be deafeted","GG WP", "Pure luck","But can you do it again?"};
 
-    textcolor(GREEN);
     return  "You win ";
 
 }
@@ -102,7 +99,6 @@ std::string lose(int &computerWin){
     //WIP Feature
     std::string losePharases[] = {"Try harder net time", "Machines always win","GG WP", "Pure strategy","And you will do it again"};
 
-    textcolor(RED);
     return "You lose ";
 
 }
@@ -110,6 +106,5 @@ std::string draw(){
     //WIP Feature
     std::string drawPharases[] = {"Your luck ends now", "Almost","GG WP", "Did you read my code?","Did I read your mind?"};
 
-    textcolor(BLUE);
     return "It's a draw, ";;
 }

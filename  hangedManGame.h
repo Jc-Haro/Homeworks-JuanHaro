@@ -1,3 +1,5 @@
+
+/*
 #include<iostream>
 #include"./drawHangdeMan.h"
 #include<string>
@@ -83,3 +85,6 @@ void  hangedManGameMain(){
             }
     }
  }
+
+*/
+ 

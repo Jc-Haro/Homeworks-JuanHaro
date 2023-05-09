@@ -2,13 +2,14 @@
 #include<vector>
 #include<algorithm>
 #include<time.h>
-#include<conio.h>
 
 std::string randomVictoryPharase();
 std::string randomAttemptPhrase();
 std::string RandomDefeatPharase();
 
 void guessMyWordMain(){
+
+
 
 bool isPlaying = true;
 bool keepPlaying = true;
@@ -27,12 +28,11 @@ std::string shuffledWord = wordToGuess;
 std::random_shuffle(shuffledWord.begin(), shuffledWord.end());
 
 
-textbackground(BLUE);
 
 
 
 while(keepPlaying){
-    
+
     std::cout<<"Welcome to order my word";
     lives = 3;
     while (isPlaying)
