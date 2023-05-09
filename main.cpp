@@ -3,7 +3,7 @@
 #include"./consoleNumbers.h"
 #include"./rockPapersScissors.h"
 #include"./guessMyWord.h"
-#include"./ hangedManGame.h"
+//#include"./ hangedManGame.h"
 
 
 int main(){
@@ -12,7 +12,6 @@ int main(){
     bool runMainHW=true;
 
     do{
-        textcolor(WHITE);
         std::cout<<"Welcome to Juan Haro Homeworks\nPlease choose an activity:\n";
         std::cout<<"1- End program\n";
         std::cout<<"2.- Guess My number\n";
@@ -33,7 +32,8 @@ int main(){
             break;
         case '5': guessMyWordMain();
             break;
-        case '6': hangedManGameMain();
+        //case '6': hangedManGameMain();
+        //    break;
         default: std::cout<<"That option is not available yet\n";
             break;
         }
