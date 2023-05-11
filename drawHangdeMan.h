@@ -109,7 +109,7 @@ void DrawFourthState(){
 }
 void DrawFifthState(){
     
-  std::cout<<" ___________________________"<<std::endl;
+    std::cout<<" ___________________________"<<std::endl;
     std::cout<<"  |                      |"<<std::endl;
     std::cout<<"  |                  -------"<<std::endl;
     std::cout<<"  |                 |  -  o |"<<std::endl;
@@ -146,4 +146,21 @@ void DrawFinalState(){
     std::cout<<"  |                  /     \\"<<std::endl;
     std::cout<<"  |"<<std::endl;
     std::cout<<"__|___________________________ "<<std::endl;
+}
+void winState(){
+
+    std::cout<<"                    -------"<<std::endl;
+    std::cout<<"                   |  O  O |"<<std::endl;
+    std::cout<<"                   |    w  |"<<std::endl;
+    std::cout<<"                   |_______|"<<std::endl;
+    std::cout<<"                       |"<<std::endl;
+    std::cout<<"                     \\ | /"<<std::endl;
+    std::cout<<"                      \\|/"<<std::endl;
+    std::cout<<"                       |"<<std::endl;
+    std::cout<<"                       |"<<std::endl;    
+    std::cout<<"                       |"<<std::endl;
+    std::cout<<"                      / \\"<<std::endl;
+    std::cout<<"                     /   \\"<<std::endl;
+    std::cout<<"                    /     \\"<<std::endl;
+    std::cout<<"  "<<std::endl;
 }
