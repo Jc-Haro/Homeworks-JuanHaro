@@ -47,7 +47,8 @@ void  hangedManGameMain(){
             }
             
             DrawHangedMan(errors);
-            std::cout<<std::endl<<wordToGuess<<std::endl;
+
+            //std::cout<<std::endl<<wordToGuess<<std::endl;
             std::cout<<std::endl<<wordToShow<<std::endl;
             do{
                
