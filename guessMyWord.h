@@ -23,7 +23,7 @@ srand(static_cast<unsigned int>(time(0)));
 int randomIndex = rand()%randomWords.size();
 std::string wordToGuess = randomWords[randomIndex];
 
-//Shuflong the word an saving the original
+//Shuffle the word an saving the original
 std::string shuffledWord = wordToGuess;
 std::random_shuffle(shuffledWord.begin(), shuffledWord.end());
 
@@ -42,6 +42,7 @@ while(keepPlaying){
         std::cout<<"\nTry to order this word: "<<shuffledWord<<std::endl;
         std::cin>>playerWordGuess;
         
+
         if(playerWordGuess == wordToGuess){
             isPlaying = false;
             std::cout<<"\nCongratulations you win!!!"<<std::endl;
