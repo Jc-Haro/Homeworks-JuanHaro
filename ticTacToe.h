@@ -14,8 +14,7 @@ void DrawBoard(char board[ROWS][COLUMNS]);
 int getPlayerInput(std::vector<int> & availableBoxes);
 int  checkValidInput();
 bool checkDigit(char check);
-void checkWin(bool & hasWon, int lastPlayerInput,char board[ROWS][COLUMNS]);
-
+bool checkWin(int playerLastChoice, char board[COLUMNS][ROWS]);
 
 
 void ticTacToeMain(){
@@ -33,8 +32,9 @@ void ticTacToeMain(){
         std::cout<<std::endl<<"Is "<<actualPlayer<<" turn"<<std::endl;
         pickedBox =  getPlayerInput(availableBoxes);
         gameBoard[pickedBox/3][pickedBox%3] = actualPlayer;
-        if(turnNumber>5){
-            //checkWin(hasWin,pickedBox, gameBoard);
+        if(turnNumber>4){
+            hasWin = checkWin(pickedBox, gameBoard);
+            turnNumber--;
         }
         turnNumber++;
         
@@ -43,8 +43,7 @@ void ticTacToeMain(){
     std::cout<<"\nFinal board"<<std::endl;
     DrawBoard(gameBoard);
     if(hasWin){
-        actualPlayer = (turnNumber-1)%2==0? player1 : player2;
-        std::cout<<"And "<< actualPlayer << " WINS!!!";
+        std::cout<<"And "<< actualPlayer << " WINS!!!"<<std::endl<<std::endl;
     }
     else{
         std::cout<<"And its a Draw!!!"<<std::endl<<std::endl;
@@ -112,52 +111,32 @@ int  checkValidInput(){
     return int(temporalPlayerInput[0]-48);
 }
 
-
-
 bool checkDigit(char check){
     return check == '0' ||check == '1' ||check == '2' ||check == '3' ||check == '4' ||check == '5' ||check == '6' ||check == '7' ||check == '8' ||check == '9';
 }
 
-void checkWin(bool & hasWon, int lastPlayerInput, char board[ROWS][COLUMNS]){
-    switch (lastPlayerInput)
-    {
-        case 0 : 
-        //Finished
-            if((board[0][0]==board[0][1] && board[0][0] == board[0][2]) || (board[0][0]==board[1][0] && board[0][0] == board[2][0]) || (board[0][0]==board[1][1] && board[0][0]==board[2][2])){
-                hasWon = true;
-            }
-            break;
-        case 1 : 
-            break;
-        case 2 : 
-        //Finished
-            if((board[0][2]==board[0][1] && board[0][2] == board[0][0]) || (board[0][2]==board[1][2] && board[0][2] == board[2][2]) || (board[0][2]==board[1][1] && board[0][2]==board[2][0])){
-                hasWon = true;
-            }
-            break;
-        case 3 : 
-            break;
-        case 4 : 
-            break;
-        case 5 : 
-            break;
-        case 6 : 
-        //Finished
-            if((board[2][0]==board[2][1] && board[2][0] == board[2][2]) || (board[2][0]==board[1][0] && board[2][0] == board[0][0]) || (board[2][0]==board[1][1] && board[0][2])){
-                hasWon = true;
-            }
-            break;
-        case 7 : 
-            break;
-        case 8 : 
+bool checkWin(int playerLastChoice, char board[COLUMNS][ROWS]){
+    
+    int x = playerLastChoice/3;
+    int y = playerLastChoice%3;
+    bool won = false;
 
-            if((board[2][2]==board[2][1] && board[2][2] == board[2][0]) || (board[2][2]==board[1][2] && board[2][2] == board[0][2]) || (board[2][2]==board[1][1] && board[2][2] == board[0][0])){
-                hasWon = true;
-            }
-            break;
-        case 9 : 
-            break;
-        default: std::cout<<"That's something unexpected\nAn error has occur"<<std::endl;
-            break;
+    if(board[x][0] == board[x][1] && board[x][0] == board[x][2]){
+        won = true;
     }
+    if(board[0][y] == board[1][y] && board[0][y] == board[2][y]){
+        won = true;
+    }
+    if(playerLastChoice == 0  || playerLastChoice == 4 || playerLastChoice == 8){
+        if(board[0][0]== board[1][1] && board[0][0] == board[2][2]){
+            won =  true;
+        }
+    }
+    if( playerLastChoice == 2 || playerLastChoice == 4 || playerLastChoice == 6 ){
+        if(board[2][0]== board[1][1] && board[0][0] == board[0][2]){
+            won = true;
+        }
+    }
+
+    return won;
 }
