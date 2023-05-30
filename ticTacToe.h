@@ -34,7 +34,6 @@ void ticTacToeMain(){
         gameBoard[pickedBox/3][pickedBox%3] = actualPlayer;
         if(turnNumber>4){
             hasWin = checkWin(pickedBox, gameBoard);
-            turnNumber--;
         }
         turnNumber++;
         
@@ -43,10 +42,11 @@ void ticTacToeMain(){
     std::cout<<"\nFinal board"<<std::endl;
     DrawBoard(gameBoard);
     if(hasWin){
-        std::cout<<"And "<< actualPlayer << " WINS!!!"<<std::endl<<std::endl;
+        turnNumber--;
+        std::cout<<"\nAnd "<< actualPlayer << " WINS!!!"<<std::endl<<std::endl;
     }
     else{
-        std::cout<<"And its a Draw!!!"<<std::endl<<std::endl;
+        std::cout<<"\nAnd its a Draw!!!"<<std::endl<<std::endl;
     }
     
     
@@ -122,21 +122,21 @@ bool checkWin(int playerLastChoice, char board[COLUMNS][ROWS]){
     bool won = false;
 
     if(board[x][0] == board[x][1] && board[x][0] == board[x][2]){
-        won = true;
+        return  true;
     }
     if(board[0][y] == board[1][y] && board[0][y] == board[2][y]){
-        won = true;
+        return  true;
     }
-    if(playerLastChoice == 0  || playerLastChoice == 4 || playerLastChoice == 8){
+    if(x==y){
         if(board[0][0]== board[1][1] && board[0][0] == board[2][2]){
-            won =  true;
+            return true;
         }
     }
-    if( playerLastChoice == 2 || playerLastChoice == 4 || playerLastChoice == 6 ){
-        if(board[2][0]== board[1][1] && board[0][0] == board[0][2]){
-            won = true;
+    if( (x+y)==2){
+        if(board[2][0]== board[1][1] && board[2][0] == board[0][2]){
+            return  true;
         }
     }
 
-    return won;
+    return false;
 }
