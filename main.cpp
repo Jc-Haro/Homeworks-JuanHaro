@@ -12,6 +12,7 @@ int main(){
     bool runMainHW=true;
 
     do{
+        clrscr();
         std::cout<<"Welcome to Juan Haro Homeworks\nPlease choose an activity:\n";
         std::cout<<"1.- End program\n";
         std::cout<<"2.- Guess My number\n";
